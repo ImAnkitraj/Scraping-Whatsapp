@@ -7,39 +7,52 @@ var driver = new webdriver.Builder() // driver provide interaction with hardware
 driver.get('https://web.whatsapp.com/'); 
 
 
-Pause(20, ScrapExample);
+Pause(20, AutomatedWhatsappMessage);
 
-function ScrapExample() {
-    // statement
-    console.log("Scraping.. ");
-    // driver.findElement(By.id('email')).sendKeys('imankitrj@gmail.com');
-    // driver.findElement(By.id('pass')).sendKeys('king24dinoco');
-    // driver.findElement(By.id('u_0_b')).click();
-
-    Pause(50,second);
+function AutomatedWhatsappMessage() {
+    console.log("Starting Automated replies ");
+    Pause(80,searchContact);
     // Pause(3, QuitDriver);
 }
 function message(){
-    first();
+    messageBody();
 }
-function first(){
-    console.log('first');
+
+//Sending Message
+function messageBody(){
+    console.log('messageBody');
     var ser = driver.findElement(By.xpath("//*[@id='main']/footer/div[1]/div[2]/div/div[2]"));
-    ser.sendKeys('Hello');
-    Pause(5,press);
+    ser.sendKeys('Ooo');
+    Pause(5,pressSend);
 }
-function press(){
+function pressSend(){
     var button =driver.findElement(By.xpath("//*[@id='main']/footer/div[1]/div[3]/button")).click();
 }
 
-function second(){
-    console.log('second');
+
+//Searching Conatct
+function searchContact(){
+    console.log("searchContact");
+    var searchbar=driver.findElement(By.xpath("//*[@id='side']/div[1]/div/label/div/div[2]"));
+    searchbar.sendKeys("Twilio");
+    Pause(10,pressSearch);
+}
+function pressSearch(){
+    console.log("pressSearch");
+    driver.findElement(By.xpath("//*[@id='pane-side']/div[1]/div/div/div[2]")).click();
+    Pause(40,message);
+}
+
+
+//Sending Message to first pinned contact
+function firstPinnedContact(){
+    console.log('firstPinnedContact');
     var ser = driver.findElement(By.xpath("//*[@id='pane-side']/div[1]/div/div/div[1]/div/div")).click();
-    Pause(40,interval);
+    Pause(40,message);
 }
-function interval(){
-    setInterval(message,1000)
-}
+
+
+
 //Adding Selenium Wait
 function Pause(Time, FuncName) {
     setTimeout(FuncName, Time * 1000);

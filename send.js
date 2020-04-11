@@ -1,7 +1,7 @@
 var webdriver = require('selenium-webdriver'), //  including web driver
     By = webdriver.By; //obj have properties 
 var driver = new webdriver.Builder() // driver provide interaction with hardware
-    .forBrowser('chrome') //mebtioning the browser
+    .forBrowser('chrome') //mentioning the browser
     .build(); //Opening our browser
 
 driver.get('https://web.whatsapp.com/'); 

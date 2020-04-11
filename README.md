@@ -17,4 +17,6 @@ Any text editor (vs code, atom, sublime)
 
 3. Wait for a while and then scan the qr code using your whatsapp web scanner.
 
-4. Then enjoy the automation.
+4. Write the name of the contact to whom you want to send message in send.js file.
+
+5. Then enjoy the automation.

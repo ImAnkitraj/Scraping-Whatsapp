@@ -34,7 +34,7 @@ function pressSend(){
 function searchContact(){
     console.log("searchContact");
     var searchbar=driver.findElement(By.xpath("//*[@id='side']/div[1]/div/label/div/div[2]"));
-    searchbar.sendKeys("Twilio");
+    searchbar.sendKeys("Twilio"); // Enter your contact number
     Pause(10,pressSearch);
 }
 function pressSearch(){

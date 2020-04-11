@@ -22,7 +22,7 @@ function message(){
 function messageBody(){
     console.log('messageBody');
     var ser = driver.findElement(By.xpath("//*[@id='main']/footer/div[1]/div[2]/div/div[2]"));
-    ser.sendKeys('Ooo');
+    ser.sendKeys('Message body'); //Write your message here
     Pause(5,pressSend);
 }
 function pressSend(){
